@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>make.fun — live bounty board</title>
+<meta name="description" content="A fast, read-only frontend for make.fun: the live bounty board, bounty pages, leaderboards and public profiles, straight from make.fun's public API.">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#view">Skip to content</a>
+<header class="topbar">
+  <a class="brand" href="#/" aria-label="make.fun home">
+    <span class="brand-mark" aria-hidden="true">M</span>
+    <span class="brand-word">make<em>.fun</em></span>
+  </a>
+  <nav class="topnav" aria-label="Primary">
+    <a href="#/" data-nav="board">Board</a>
+    <a href="#/rankings" data-nav="rankings">Rankings</a>
+    <a class="topnav-ext" href="https://make.fun" target="_blank" rel="noopener">make.fun ↗</a>
+  </nav>
+  <div class="topbar-meta" id="topbar-meta" aria-live="polite"></div>
+</header>
+<main id="view" tabindex="-1" aria-busy="true"></main>
+<footer class="foot">
+  <p>Read-only client · data from <a href="https://make.fun" target="_blank" rel="noopener">make.fun</a>'s public API · no sign-in, no writes</p>
+  <p class="foot-note" id="foot-note"></p>
+</footer>
+<script type="module" src="main.js"></script>
+</body>
+</html>
