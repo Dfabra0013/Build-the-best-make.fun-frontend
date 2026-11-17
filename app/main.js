@@ -153,6 +153,7 @@ async function route() {
     else if (r.name === 'profile') await renderProfile(token, r.handle);
     else if (r.name === 'rankings') await renderRankings(token);
     startTicks();
+    setTitle(r);
   } catch (err) {
     if (token !== routeToken) return;
     setMeta('down', 'API unreachable');
@@ -162,6 +163,19 @@ async function route() {
   view.querySelector('[data-retry]')?.addEventListener('click', () => route());
 }
 
+/* each surface has its own URL, so each carries its own title */
+function setTitle(r) {
+  const base = 'make.fun';
+  const map = {
+    board: `${base} — live bounty board`,
+    rankings: `Global rankings — ${base}`,
+    bounty: `Bounty — ${base}`,
+    leaderboard: `Leaderboard — ${base}`,
+    profile: `Profile — ${base}`,
+  };
+  const title = view.querySelector('h1')?.textContent?.trim();
+  document.title = title ? `${title} — ${base}` : map[r.name] || `${base} — live bounty board`;
+}
+
 window.addEventListener('hashchange', route);
-document.title = 'make.fun — live bounty board';
 route();

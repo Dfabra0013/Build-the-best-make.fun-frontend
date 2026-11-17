@@ -85,7 +85,10 @@ main{max-width:1180px;margin:0 auto;padding:clamp(18px,3.5vw,40px) clamp(16px,4v
 .pot b{display:block;font-size:20px;letter-spacing:-.02em;color:var(--accent)}
 .pot span{font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:.07em}
 .count{font-family:var(--mono);font-size:12.5px;color:var(--ink-2)}
+/* countdown chips inside a card foot get their own pill so they never blend in */
+.card-foot .count{background:var(--bg-2);border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--ink-2)}
 .count.urgent{color:var(--warn);font-weight:700}
+.card-foot .count.urgent{color:#0b0e14;background:var(--warn);border-color:var(--warn)}
 .sponsor{display:flex;align-items:center;gap:7px;color:var(--ink-3);font-size:12.5px}
 .sponsor img{width:18px;height:18px;border-radius:5px;object-fit:cover}
 .skills{display:flex;gap:5px;flex-wrap:wrap}
